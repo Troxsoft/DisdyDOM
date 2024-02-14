@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="wasm_exec.js"></script>
+
+    <script defer>
+        const go = new Go();
+
+        WebAssembly.instantiateStreaming(fetch("lib.wasm"), go.importObject).then((result) => {
+            go.run(result.instance);
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <style>
+        .pl {
+            display: inline;
+        }
+
+
+
+        #colombia {
+            font-size: large;
+        }
+    </style>
+    <div id="hello ju">
+        h
+    </div>
+</body>
+
+</html>
