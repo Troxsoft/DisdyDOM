@@ -26,9 +26,15 @@ type IObjectDOM interface {
 
 	ClearClass()
 	ClearID()
+
+	CallFunction(string, ...interface{})
+	GetProperty(string) js.Value
+	GetPropertyAsString(string)
+	SetProperty(string, ...interface{})
 }
 type ObjectDOM struct {
-	object js.Value
+	object   js.Value
+	Listener *EventListener
 }
 
 func (p *ObjectDOM) NewStyle() CSStyle {
@@ -123,4 +129,24 @@ func (oj *ObjectDOM) Class() []string {
 
 	return class
 
+}
+
+/*
+CallFunction(string,...interface{})
+
+	GetProperty(string)js.Value
+	GetPropertyAsString(string)
+	SetProperty(string,...interface{})
+*/
+func (o *ObjectDOM) CallFunction(function string, params ...interface{}) {
+	o.object.Call(function, params)
+}
+func (o *ObjectDOM) SetProperty(property string, params ...interface{}) {
+	o.object.Set(property, params)
+}
+func (o *ObjectDOM) GetAsStringProperty(property string) string {
+	return o.object.Get(property).String()
+}
+func (o *ObjectDOM) GetProperty(property string) js.Value {
+	return o.object.Get(property)
 }

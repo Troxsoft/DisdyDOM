@@ -19,20 +19,20 @@ func (d *DocumentDOM) GetById(id string) *ObjectDOM {
 	if body.IsNull() || body.IsUndefined() {
 		return nil
 	}
-	return &ObjectDOM{
+	p90 := ObjectDOM{
 		object: body,
 	}
+	p90.Listener = NewEventListener(&p90)
+	return &p90
 }
 func (d *DocumentDOM) AppendChild(ele *ObjectDOM) {
 	d.doc.Get("body").Call("appendChild", ele.object)
 }
-func (d *DocumentDOM) Create(typeOfElement int) (*ObjectDOM, error) {
-	p := ConvertTypeHTMLToString(typeOfElement)
-	if !IsValidTypeHTML(p) {
-		return nil, ErrHTMLTypeInvalid
-	}
-	eleNew := d.doc.Call("createElement", p)
-	return &ObjectDOM{
+func (d *DocumentDOM) Create(typeOfElement string) *ObjectDOM {
+	eleNew := d.doc.Call("createElement", typeOfElement)
+	P := &ObjectDOM{
 		object: eleNew,
-	}, nil
+	}
+	P.Listener = NewEventListener(P)
+	return P
 }

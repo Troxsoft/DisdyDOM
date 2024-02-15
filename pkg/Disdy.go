@@ -1,64 +1,127 @@
 package pkg
 
-import "errors"
+import (
+	"fmt"
+	"strings"
+	"syscall/js"
+)
 
 const (
-	H1 = iota
-	H2
-	H3
-	H4
-	H5
-	H6
+	DOCTYPE    = "!DOCTYPE"
+	HTML       = "HTML"
+	HEAD       = "HEAD"
+	META       = "META"
+	TITLE      = "TITLE"
+	LINK       = "LINK"
+	STYLE      = "STYLE"
+	BODY       = "BODY"
+	H1         = "H1"
+	H2         = "H2"
+	H3         = "H3"
+	H4         = "H4"
+	H5         = "H5"
+	H6         = "H6"
+	P          = "P"
+	BR         = "BR"
+	HR         = "HR"
+	A          = "A"
+	EM         = "EM"
+	STRONG     = "STRONG"
+	SPAN       = "SPAN"
+	DIV        = "DIV"
+	IMG        = "IMG"
+	UL         = "UL"
+	OL         = "OL"
+	LI         = "LI"
+	TABLE      = "TABLE"
+	TR         = "TR"
+	TH         = "TH"
+	TD         = "TD"
+	CAPTION    = "CAPTION"
+	THEAD      = "THEAD"
+	TBODY      = "TBODY"
+	TFOOT      = "TFOOT"
+	FORM       = "FORM"
+	INPUT      = "INPUT"
+	BUTTON     = "BUTTON"
+	SELECT     = "SELECT"
+	OPTION     = "OPTION"
+	TEXTAREA   = "TEXTAREA"
+	LABEL      = "LABEL"
+	FIELDSET   = "FIELDSET"
+	LEGEND     = "LEGEND"
+	SCRIPT     = "SCRIPT"
+	NOSCRIPT   = "NOSCRIPT"
+	AUDIO      = "AUDIO"
+	VIDEO      = "VIDEO"
+	SOURCE     = "SOURCE"
+	CANVAS     = "CANVAS"
+	EMBED      = "EMBED"
+	IFRAME     = "IFRAME"
+	OBJECT     = "OBJECT"
+	PARAM      = "PARAM"
+	SVG        = "SVG"
+	MATH       = "MATH"
+	DEL        = "DEL"
+	INS        = "INS"
+	CODE       = "CODE"
+	KBD        = "KBD"
+	SAMP       = "SAMP"
+	VAR        = "VAR"
+	SUB        = "SUB"
+	SUP        = "SUP"
+	Q          = "Q"
+	BLOCKQUOTE = "BLOCKQUOTE"
+	MARK       = "MARK"
+	TIME       = "TIME"
+	PROGRESS   = "PROGRESS"
+	METER      = "METER"
+	I          = "I"
+	B          = "B"
+	U          = "U"
+	S          = "S"
+	SMALL      = "SMALL"
+	STRIKE     = "STRIKE"
+	BIG        = "BIG"
+	FONT       = "FONT"
+	CENTER     = "CENTER"
+	PRE        = "PRE"
+	ARTICLE    = "ARTICLE"
+	ASIDE      = "ASIDE"
+	DETAILS    = "DETAILS"
+	FIGURE     = "FIGURE"
+	FIGCAPTION = "FIGCAPTION"
+	FOOTER     = "FOOTER"
+	HEADER     = "HEADER"
+	MAIN       = "MAIN"
+	MENU       = "MENU"
+	NAV        = "NAV"
+	SECTION    = "SECTION"
+	SUMMARY    = "SUMMARY"
 )
-
-var (
-	ErrHTMLTypeInvalid = errors.New("HTML Type Invalid")
-)
-
-func IsValidTypeHTML(strType string) bool {
-	if strType == "INVALID" {
-		return false
-	} else {
-		return true
-	}
-}
-func ConvertTypeHTMLToString(TypeHTML int) string {
-	j, err := ConvertTypeHTML(TypeHTML)
-	if err != nil {
-		return "INVALID"
-	} else {
-		return *j
-	}
-}
-func ConvertTypeHTML(TypeHTML int) (*string, error) {
-	ty := "INVALID"
-	switch TypeHTML {
-	case H1:
-		ty = "h1"
-		break
-	case H2:
-		ty = "h2"
-		break
-	case H3:
-		ty = "h3"
-		break
-	case H4:
-		ty = "h4"
-		break
-	case H5:
-		ty = "h5"
-		break
-	case H6:
-		ty = "h6"
-		break
-	default:
-		ty = "INVALID"
-		break
-	}
-	if ty == "INVALID" {
-		return nil, ErrHTMLTypeInvalid
-	}
-	return &ty, nil
-}
 
 var Document = NewDocumentDOM()
+var Window = NewWindowDOM()
+
+func ExportFunction(funcName string, function func(f []any) any) {
+
+	js.Global().Set(funcName, js.FuncOf(func(this js.Value, inputs []js.Value) any {
+		params := []any{}
+		for _, value := range inputs {
+			if value.Type() == js.TypeString {
+				params = append(params, value.String())
+			} else if value.Type() == js.TypeBoolean {
+				params = append(params, value.Bool())
+			} else if value.Type() == js.TypeNumber {
+				q := value.Float()
+				if strings.Contains(fmt.Sprint(q), ".") {
+
+					params = append(params, value.Float())
+				} else {
+					params = append(params, value.Int())
+				}
+			}
+		}
+		return function(params)
+	}))
+}

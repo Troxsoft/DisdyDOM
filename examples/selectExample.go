@@ -7,6 +7,9 @@ import (
 )
 
 func main() {
+	c := make(chan struct{}, 0)
 	dom.DomExample()
+
 	//gettypeofelementhtml.PrintTypeOfElemnt(*pkg.Document.GetById("hello"))
+	<-c
 }

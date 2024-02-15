@@ -10,12 +10,14 @@
 
         WebAssembly.instantiateStreaming(fetch("lib.wasm"), go.importObject).then((result) => {
             go.run(result.instance);
+            let h = saludamePapi("juan")
+            console.table({ saludo: h })
         });
     </script>
 </head>
 
 <body>
-
+    <button id="btn1"></button>
 
     <style>
         .pl {
