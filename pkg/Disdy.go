@@ -6,6 +6,7 @@ import (
 	"syscall/js"
 )
 
+// HTML ELEMENT
 const (
 	DOCTYPE    = "!DOCTYPE"
 	HTML       = "HTML"
@@ -100,9 +101,31 @@ const (
 	SUMMARY    = "SUMMARY"
 )
 
+// A *DocumentDOM
 var Document = NewDocumentDOM()
+
+// A *WindowDOM
 var Window = NewWindowDOM()
 
+/*
+Export a function to javascipt. You can call it by name and pass parameters and return them
+
+	//Example:
+	ExportFunction("saludamePapi", func(f []any) any {
+		Window.Alert(fmt.Sprintf("hola como estas: %s", f[0]))
+		return fmt.Sprintf("hola como estas: %s", f[0])
+	})
+
+To call in javascript
+
+		const go = new Go();
+
+	        WebAssembly.instantiateStreaming(fetch("lib.wasm"), go.importObject).then((result) => {
+	            go.run(result.instance);
+	            let h = saludamePapi("juan")
+	            console.table({ saludo: h })
+	        });
+*/
 func ExportFunction(funcName string, function func(f []any) any) {
 
 	js.Global().Set(funcName, js.FuncOf(func(this js.Value, inputs []js.Value) any {

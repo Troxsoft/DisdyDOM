@@ -1,10 +1,11 @@
 package pkg
 
+// Represents a MouseEvent object in Typescript and JS (It is very incomplete)
 type MouseEvent struct {
-	X              int
-	Y              int
-	ClientX        int
-	ClientY        int
-	PreventDefault func()
-	Object         *ObjectDOM
+	X              int        // X
+	Y              int        // Y
+	ClientX        int        // ClientX
+	ClientY        int        // ClientY
+	PreventDefault func()     // PreventDefault()
+	Object         *ObjectDOM // Object
 }

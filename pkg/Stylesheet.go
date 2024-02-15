@@ -6,369 +6,370 @@ import (
 )
 
 type CSStylesheet struct {
-	AlignContent             string `default:".None"`
-	AlignItems               string `default:".None"`
-	AlignSelf                string `default:".None"`
-	All                      string `default:".None"`
-	Animation                string `default:".None"`
-	AnimationDelay           string `default:".None"`
-	AnimationDirection       string `default:".None"`
-	AnimationDuration        string `default:".None"`
-	AnimationFillMode        string `default:".None"`
-	AnimationIteration       string `default:".None"`
-	AnimationName            string `default:".None"`
-	AnimationPlayState       string `default:".None"`
-	AnimationTiming          string `default:".None"`
-	BackdropFilter           string `default:".None"`
-	BackfaceVisibility       string `default:".None"`
-	Background               string `default:".None"`
-	BackgroundAttachment     string `default:".None"`
-	BackgroundBlendMode      string `default:".None"`
-	BackgroundClip           string `default:".None"`
-	BackgroundColor          string `default:".None"`
-	BackgroundImage          string `default:".None"`
-	BackgroundOrigin         string `default:".None"`
-	BackgroundPosition       string `default:".None"`
-	BackgroundRepeat         string `default:".None"`
-	BackgroundSize           string `default:".None"`
-	BlockSize                string `default:".None"`
-	Border                   string `default:".None"`
-	BorderBlock              string `default:".None"`
-	BorderBlockColor         string `default:".None"`
-	BorderBlockEnd           string `default:".None"`
-	BorderBlockEndColor      string `default:".None"`
-	BorderBlockEndStyle      string `default:".None"`
-	BorderBlockEndWidth      string `default:".None"`
-	BorderBlockStart         string `default:".None"`
-	BorderBlockStartColor    string `default:".None"`
-	BorderBlockStartStyle    string `default:".None"`
-	BorderBlockStartWidth    string `default:".None"`
-	BorderBlockStyle         string `default:".None"`
-	BorderBlockWidth         string `default:".None"`
-	BorderBottom             string `default:".None"`
-	BorderBottomColor        string `default:".None"`
-	BorderBottomLeftRadius   string `default:".None"`
-	BorderBottomRightRadius  string `default:".None"`
-	BorderBottomStyle        string `default:".None"`
-	BorderBottomWidth        string `default:".None"`
-	BorderCollapse           string `default:".None"`
-	BorderColor              string `default:".None"`
-	BorderImage              string `default:".None"`
-	BorderImageOutset        string `default:".None"`
-	BorderImageRepeat        string `default:".None"`
-	BorderImageSlice         string `default:".None"`
-	BorderImageSource        string `default:".None"`
-	BorderImageWidth         string `default:".None"`
-	BorderInline             string `default:".None"`
-	BorderInlineColor        string `default:".None"`
-	BorderInlineEnd          string `default:".None"`
-	BorderInlineEndColor     string `default:".None"`
-	BorderInlineEndStyle     string `default:".None"`
-	BorderInlineEndWidth     string `default:".None"`
-	BorderInlineStart        string `default:".None"`
-	BorderInlineStartColor   string `default:".None"`
-	BorderInlineStartStyle   string `default:".None"`
-	BorderInlineStartWidth   string `default:".None"`
-	BorderInlineStyle        string `default:".None"`
-	BorderInlineWidth        string `default:".None"`
-	BorderLeft               string `default:".None"`
-	BorderLeftColor          string `default:".None"`
-	BorderLeftStyle          string `default:".None"`
-	BorderLeftWidth          string `default:".None"`
-	BorderRadius             string `default:".None"`
-	BorderRight              string `default:".None"`
-	BorderRightColor         string `default:".None"`
-	BorderRightStyle         string `default:".None"`
-	BorderRightWidth         string `default:".None"`
-	BorderSpacing            string `default:".None"`
-	BorderStyle              string `default:".None"`
-	BorderTop                string `default:".None"`
-	BorderTopColor           string `default:".None"`
-	BorderTopLeftRadius      string `default:".None"`
-	BorderTopRightRadius     string `default:".None"`
-	BorderTopStyle           string `default:".None"`
-	BorderTopWidth           string `default:".None"`
-	BorderWidth              string `default:".None"`
-	Bottom                   string `default:".None"`
-	BoxDecorationBreak       string `default:".None"`
-	BoxShadow                string `default:".None"`
-	BoxSizing                string `default:".None"`
-	BreakAfter               string `default:".None"`
-	BreakBefore              string `default:".None"`
-	BreakInside              string `default:".None"`
-	CaptionSide              string `default:".None"`
-	CaretColor               string `default:".None"`
-	Clear                    string `default:".None"`
-	Clip                     string `default:".None"`
-	ClipPath                 string `default:".None"`
-	Color                    string `default:".None"`
-	ColumnCount              string `default:".None"`
-	ColumnFill               string `default:".None"`
-	ColumnGap                string `default:".None"`
-	ColumnRule               string `default:".None"`
-	ColumnRuleColor          string `default:".None"`
-	ColumnRuleStyle          string `default:".None"`
-	ColumnRuleWidth          string `default:".None"`
-	ColumnSpan               string `default:".None"`
-	ColumnWidth              string `default:".None"`
-	Columns                  string `default:".None"`
-	Contain                  string `default:".None"`
-	Content                  string `default:".None"`
-	CounterIncrement         string `default:".None"`
-	CounterReset             string `default:".None"`
-	Cursor                   string `default:".None"`
-	Direction                string `default:".None"`
-	Display                  string `default:".None"`
-	EmptyCells               string `default:".None"`
-	Filter                   string `default:".None"`
-	Flex                     string `default:".None"`
-	FlexBasis                string `default:".None"`
-	FlexDirection            string `default:".None"`
-	FlexFlow                 string `default:".None"`
-	FlexGrow                 string `default:".None"`
-	FlexShrink               string `default:".None"`
-	FlexWrap                 string `default:".None"`
-	Float                    string `default:".None"`
-	Font                     string `default:".None"`
-	FontFamily               string `default:".None"`
-	FontFeatureSettings      string `default:".None"`
-	FontKerning              string `default:".None"`
-	FontLanguageOverride     string `default:".None"`
-	FontSize                 string `default:".None"`
-	FontSizeAdjust           string `default:".None"`
-	FontStretch              string `default:".None"`
-	FontStyle                string `default:".None"`
-	FontSynthesis            string `default:".None"`
-	FontVariant              string `default:".None"`
-	FontVariantCaps          string `default:".None"`
-	FontVariantEastAsian     string `default:".None"`
-	FontVariantLigatures     string `default:".None"`
-	FontVariantNumeric       string `default:".None"`
-	FontVariantPosition      string `default:".None"`
-	FontWeight               string `default:".None"`
-	Gap                      string `default:".None"`
-	Grid                     string `default:".None"`
-	GridArea                 string `default:".None"`
-	GridAutoColumns          string `default:".None"`
-	GridAutoFlow             string `default:".None"`
-	GridAutoRows             string `default:".None"`
-	GridColumn               string `default:".None"`
-	GridColumnEnd            string `default:".None"`
-	GridColumnGap            string `default:".None"`
-	GridColumnStart          string `default:".None"`
-	GridGap                  string `default:".None"`
-	GridRow                  string `default:".None"`
-	GridRowEnd               string `default:".None"`
-	GridRowGap               string `default:".None"`
-	GridRowStart             string `default:".None"`
-	GridTemplate             string `default:".None"`
-	GridTemplateAreas        string `default:".None"`
-	GridTemplateColumns      string `default:".None"`
-	GridTemplateRows         string `default:".None"`
-	HangingPunctuation       string `default:".None"`
-	Height                   string `default:".None"`
-	Hyphens                  string `default:".None"`
-	ImageOrientation         string `default:".None"`
-	ImageRendering           string `default:".None"`
-	InlineSize               string `default:".None"`
-	Inset                    string `default:".None"`
-	InsetBlock               string `default:".None"`
-	InsetBlockEnd            string `default:".None"`
-	InsetBlockStart          string `default:".None"`
-	InsetInline              string `default:".None"`
-	InsetInlineEnd           string `default:".None"`
-	InsetInlineStart         string `default:".None"`
-	Isolation                string `default:".None"`
-	JustifyContent           string `default:".None"`
-	Left                     string `default:".None"`
-	LetterSpacing            string `default:".None"`
-	LineBreak                string `default:".None"`
-	LineHeight               string `default:".None"`
-	ListStyle                string `default:".None"`
-	ListStyleImage           string `default:".None"`
-	ListStylePosition        string `default:".None"`
-	ListStyleType            string `default:".None"`
-	Margin                   string `default:".None"`
-	MarginBlock              string `default:".None"`
-	MarginBlockEnd           string `default:".None"`
-	MarginBlockStart         string `default:".None"`
-	MarginBottom             string `default:".None"`
-	MarginInline             string `default:".None"`
-	MarginInlineEnd          string `default:".None"`
-	MarginInlineStart        string `default:".None"`
-	MarginLeft               string `default:".None"`
-	MarginRight              string `default:".None"`
-	MarginTop                string `default:".None"`
-	Mask                     string `default:".None"`
-	MaskBorder               string `default:".None"`
-	MaskBorderMode           string `default:".None"`
-	MaskBorderOutset         string `default:".None"`
-	MaskBorderRepeat         string `default:".None"`
-	MaskBorderSlice          string `default:".None"`
-	MaskBorderSource         string `default:".None"`
-	MaskBorderWidth          string `default:".None"`
-	MaskClip                 string `default:".None"`
-	MaskComposite            string `default:".None"`
-	MaskImage                string `default:".None"`
-	MaskMode                 string `default:".None"`
-	MaskOrigin               string `default:".None"`
-	MaskPosition             string `default:".None"`
-	MaskRepeat               string `default:".None"`
-	MaskSize                 string `default:".None"`
-	MaskType                 string `default:".None"`
-	MaxBlockSize             string `default:".None"`
-	MaxHeight                string `default:".None"`
-	MaxInlineSize            string `default:".None"`
-	MaxWidth                 string `default:".None"`
-	MinBlockSize             string `default:".None"`
-	MinHeight                string `default:".None"`
-	MinInlineSize            string `default:".None"`
-	MinWidth                 string `default:".None"`
-	MixBlendMode             string `default:".None"`
-	ObjectFit                string `default:".None"`
-	ObjectPosition           string `default:".None"`
-	Offset                   string `default:".None"`
-	OffsetAnchor             string `default:".None"`
-	OffsetBlock              string `default:".None"`
-	OffsetBlockEnd           string `default:".None"`
-	OffsetBlockStart         string `default:".None"`
-	OffsetInline             string `default:".None"`
-	OffsetInlineEnd          string `default:".None"`
-	OffsetInlineStart        string `default:".None"`
-	OffsetDistance           string `default:".None"`
-	OffsetPath               string `default:".None"`
-	OffsetRotate             string `default:".None"`
-	Opacity                  string `default:".None"`
-	Order                    string `default:".None"`
-	Orphans                  string `default:".None"`
-	Outline                  string `default:".None"`
-	OutlineColor             string `default:".None"`
-	OutlineOffset            string `default:".None"`
-	OutlineStyle             string `default:".None"`
-	OutlineWidth             string `default:".None"`
-	Overflow                 string `default:".None"`
-	OverflowAnchor           string `default:".None"`
-	OverflowBlock            string `default:".None"`
-	OverflowInline           string `default:".None"`
-	OverflowWrap             string `default:".None"`
-	OverflowX                string `default:".None"`
-	OverflowY                string `default:".None"`
-	OverscrollBehavior       string `default:".None"`
-	OverscrollBehaviorBlock  string `default:".None"`
-	OverscrollBehaviorInline string `default:".None"`
-	OverscrollBehaviorX      string `default:".None"`
-	OverscrollBehaviorY      string `default:".None"`
-	Padding                  string `default:".None"`
-	PaddingBlock             string `default:".None"`
-	PaddingBlockEnd          string `default:".None"`
-	PaddingBlockStart        string `default:".None"`
-	PaddingBottom            string `default:".None"`
-	PaddingInline            string `default:".None"`
-	PaddingInlineEnd         string `default:".None"`
-	PaddingInlineStart       string `default:".None"`
-	PaddingLeft              string `default:".None"`
-	PaddingRight             string `default:".None"`
-	PaddingTop               string `default:".None"`
-	PageBreakAfter           string `default:".None"`
-	PageBreakBefore          string `default:".None"`
-	PageBreakInside          string `default:".None"`
-	PaintOrder               string `default:".None"`
-	Perspective              string `default:".None"`
-	PerspectiveOrigin        string `default:".None"`
-	PlaceContent             string `default:".None"`
-	PlaceItems               string `default:".None"`
-	PlaceSelf                string `default:".None"`
-	PointerEvents            string `default:".None"`
-	Position                 string `default:".None"`
-	Quotes                   string `default:".None"`
-	Resize                   string `default:".None"`
-	Right                    string `default:".None"`
-	Rotate                   string `default:".None"`
-	RowGap                   string `default:".None"`
-	RubyAlign                string `default:".None"`
-	RubyMerge                string `default:".None"`
-	RubyPosition             string `default:".None"`
-	Scale                    string `default:".None"`
-	ScrollBehavior           string `default:".None"`
-	ScrollMargin             string `default:".None"`
-	ScrollMarginBlock        string `default:".None"`
-	ScrollMarginBlockEnd     string `default:".None"`
-	ScrollMarginBlockStart   string `default:".None"`
-	ScrollMarginBottom       string `default:".None"`
-	ScrollMarginInline       string `default:".None"`
-	ScrollMarginInlineEnd    string `default:".None"`
-	ScrollMarginInlineStart  string `default:".None"`
-	ScrollMarginLeft         string `default:".None"`
-	ScrollMarginRight        string `default:".None"`
-	ScrollMarginTop          string `default:".None"`
-	ScrollPadding            string `default:".None"`
-	ScrollPaddingBlock       string `default:".None"`
-	ScrollPaddingBlockEnd    string `default:".None"`
-	ScrollPaddingBlockStart  string `default:".None"`
-	ScrollPaddingBottom      string `default:".None"`
-	ScrollPaddingInline      string `default:".None"`
-	ScrollPaddingInlineEnd   string `default:".None"`
-	ScrollPaddingInlineStart string `default:".None"`
-	ScrollPaddingLeft        string `default:".None"`
-	ScrollPaddingRight       string `default:".None"`
-	ScrollPaddingTop         string `default:".None"`
-	ScrollSnapAlign          string `default:".None"`
-	ScrollSnapStop           string `default:".None"`
-	ScrollSnapType           string `default:".None"`
-	ShapeImageThreshold      string `default:".None"`
-	ShapeMargin              string `default:".None"`
-	ShapeOutside             string `default:".None"`
-	TabSize                  string `default:".None"`
-	TableLayout              string `default:".None"`
-	TextAlign                string `default:".None"`
-	TextAlignLast            string `default:".None"`
-	TextCombineUpright       string `default:".None"`
-	TextDecoration           string `default:".None"`
-	TextDecorationColor      string `default:".None"`
-	TextDecorationLine       string `default:".None"`
-	TextDecorationSkip       string `default:".None"`
-	TextDecorationSkipInk    string `default:".None"`
-	TextDecorationStyle      string `default:".None"`
-	TextDecorationThickness  string `default:".None"`
-	TextEmphasis             string `default:".None"`
-	TextEmphasisColor        string `default:".None"`
-	TextEmphasisPosition     string `default:".None"`
-	TextEmphasisStyle        string `default:".None"`
-	TextIndent               string `default:".None"`
-	TextJustify              string `default:".None"`
-	TextOrientation          string `default:".None"`
-	TextOverflow             string `default:".None"`
-	TextRendering            string `default:".None"`
-	TextShadow               string `default:".None"`
-	TextSizeAdjust           string `default:".None"`
-	TextTransform            string `default:".None"`
-	TextUnderlinePosition    string `default:".None"`
-	Top                      string `default:".None"`
-	TouchAction              string `default:".None"`
-	Transform                string `default:".None"`
-	TransformBox             string `default:".None"`
-	TransformOrigin          string `default:".None"`
-	TransformStyle           string `default:".None"`
-	Transition               string `default:".None"`
-	TransitionDelay          string `default:".None"`
-	TransitionDuration       string `default:".None"`
-	TransitionProperty       string `default:".None"`
-	TransitionTiming         string `default:".None"`
-	Translate                string `default:".None"`
-	UnicodeBidi              string `default:".None"`
-	UserSelect               string `default:".None"`
-	VerticalAlign            string `default:".None"`
-	Visibility               string `default:".None"`
-	WhiteSpace               string `default:".None"`
-	Width                    string `default:".None"`
-	WillChange               string `default:".None"`
-	WordBreak                string `default:".None"`
-	WordSpacing              string `default:".None"`
-	WordWrap                 string `default:".None"`
-	WritingMode              string `default:".None"`
-	ZIndex                   string `default:".None"`
+	AlignContent             string `default:".None"` // CSS
+	AlignItems               string `default:".None"` // CSS
+	AlignSelf                string `default:".None"` // CSS
+	All                      string `default:".None"` // CSS
+	Animation                string `default:".None"` // CSS
+	AnimationDelay           string `default:".None"` // CSS
+	AnimationDirection       string `default:".None"` // CSS
+	AnimationDuration        string `default:".None"` // CSS
+	AnimationFillMode        string `default:".None"` // CSS
+	AnimationIteration       string `default:".None"` // CSS
+	AnimationName            string `default:".None"` // CSS
+	AnimationPlayState       string `default:".None"` // CSS
+	AnimationTiming          string `default:".None"` // CSS
+	BackdropFilter           string `default:".None"` // CSS
+	BackfaceVisibility       string `default:".None"` // CSS
+	Background               string `default:".None"` // CSS
+	BackgroundAttachment     string `default:".None"` // CSS
+	BackgroundBlendMode      string `default:".None"` // CSS
+	BackgroundClip           string `default:".None"` // CSS
+	BackgroundColor          string `default:".None"` // CSS
+	BackgroundImage          string `default:".None"` // CSS
+	BackgroundOrigin         string `default:".None"` // CSS
+	BackgroundPosition       string `default:".None"` // CSS
+	BackgroundRepeat         string `default:".None"` // CSS
+	BackgroundSize           string `default:".None"` // CSS
+	BlockSize                string `default:".None"` // CSS
+	Border                   string `default:".None"` // CSS
+	BorderBlock              string `default:".None"` // CSS
+	BorderBlockColor         string `default:".None"` // CSS
+	BorderBlockEnd           string `default:".None"` // CSS
+	BorderBlockEndColor      string `default:".None"` // CSS
+	BorderBlockEndStyle      string `default:".None"` // CSS
+	BorderBlockEndWidth      string `default:".None"` // CSS
+	BorderBlockStart         string `default:".None"` // CSS
+	BorderBlockStartColor    string `default:".None"` // CSS
+	BorderBlockStartStyle    string `default:".None"` // CSS
+	BorderBlockStartWidth    string `default:".None"` // CSS
+	BorderBlockStyle         string `default:".None"` // CSS
+	BorderBlockWidth         string `default:".None"` // CSS
+	BorderBottom             string `default:".None"` // CSS
+	BorderBottomColor        string `default:".None"` // CSS
+	BorderBottomLeftRadius   string `default:".None"` // CSS
+	BorderBottomRightRadius  string `default:".None"` // CSS
+	BorderBottomStyle        string `default:".None"` // CSS
+	BorderBottomWidth        string `default:".None"` // CSS
+	BorderCollapse           string `default:".None"` // CSS
+	BorderColor              string `default:".None"` // CSS
+	BorderImage              string `default:".None"` // CSS
+	BorderImageOutset        string `default:".None"` // CSS
+	BorderImageRepeat        string `default:".None"` // CSS
+	BorderImageSlice         string `default:".None"` // CSS
+	BorderImageSource        string `default:".None"` // CSS
+	BorderImageWidth         string `default:".None"` // CSS
+	BorderInline             string `default:".None"` // CSS
+	BorderInlineColor        string `default:".None"` // CSS
+	BorderInlineEnd          string `default:".None"` // CSS
+	BorderInlineEndColor     string `default:".None"` // CSS
+	BorderInlineEndStyle     string `default:".None"` // CSS
+	BorderInlineEndWidth     string `default:".None"` // CSS
+	BorderInlineStart        string `default:".None"` // CSS
+	BorderInlineStartColor   string `default:".None"` // CSS
+	BorderInlineStartStyle   string `default:".None"` // CSS
+	BorderInlineStartWidth   string `default:".None"` // CSS
+	BorderInlineStyle        string `default:".None"` // CSS
+	BorderInlineWidth        string `default:".None"` // CSS
+	BorderLeft               string `default:".None"` // CSS
+	BorderLeftColor          string `default:".None"` // CSS
+	BorderLeftStyle          string `default:".None"` // CSS
+	BorderLeftWidth          string `default:".None"` // CSS
+	BorderRadius             string `default:".None"` // CSS
+	BorderRight              string `default:".None"` // CSS
+	BorderRightColor         string `default:".None"` // CSS
+	BorderRightStyle         string `default:".None"` // CSS
+	BorderRightWidth         string `default:".None"` // CSS
+	BorderSpacing            string `default:".None"` // CSS
+	BorderStyle              string `default:".None"` // CSS
+	BorderTop                string `default:".None"` // CSS
+	BorderTopColor           string `default:".None"` // CSS
+	BorderTopLeftRadius      string `default:".None"` // CSS
+	BorderTopRightRadius     string `default:".None"` // CSS
+	BorderTopStyle           string `default:".None"` // CSS
+	BorderTopWidth           string `default:".None"` // CSS
+	BorderWidth              string `default:".None"` // CSS
+	Bottom                   string `default:".None"` // CSS
+	BoxDecorationBreak       string `default:".None"` // CSS
+	BoxShadow                string `default:".None"` // CSS
+	BoxSizing                string `default:".None"` // CSS
+	BreakAfter               string `default:".None"` // CSS
+	BreakBefore              string `default:".None"` // CSS
+	BreakInside              string `default:".None"` // CSS
+	CaptionSide              string `default:".None"` // CSS
+	CaretColor               string `default:".None"` // CSS
+	Clear                    string `default:".None"` // CSS
+	Clip                     string `default:".None"` // CSS
+	ClipPath                 string `default:".None"` // CSS
+	Color                    string `default:".None"` // CSS
+	ColumnCount              string `default:".None"` // CSS
+	ColumnFill               string `default:".None"` // CSS
+	ColumnGap                string `default:".None"` // CSS
+	ColumnRule               string `default:".None"` // CSS
+	ColumnRuleColor          string `default:".None"` // CSS
+	ColumnRuleStyle          string `default:".None"` // CSS
+	ColumnRuleWidth          string `default:".None"` // CSS
+	ColumnSpan               string `default:".None"` // CSS
+	ColumnWidth              string `default:".None"` // CSS
+	Columns                  string `default:".None"` // CSS
+	Contain                  string `default:".None"` // CSS
+	Content                  string `default:".None"` // CSS
+	CounterIncrement         string `default:".None"` // CSS
+	CounterReset             string `default:".None"` // CSS
+	Cursor                   string `default:".None"` // CSS
+	Direction                string `default:".None"` // CSS
+	Display                  string `default:".None"` // CSS
+	EmptyCells               string `default:".None"` // CSS
+	Filter                   string `default:".None"` // CSS
+	Flex                     string `default:".None"` // CSS
+	FlexBasis                string `default:".None"` // CSS
+	FlexDirection            string `default:".None"` // CSS
+	FlexFlow                 string `default:".None"` // CSS
+	FlexGrow                 string `default:".None"` // CSS
+	FlexShrink               string `default:".None"` // CSS
+	FlexWrap                 string `default:".None"` // CSS
+	Float                    string `default:".None"` // CSS
+	Font                     string `default:".None"` // CSS
+	FontFamily               string `default:".None"` // CSS
+	FontFeatureSettings      string `default:".None"` // CSS
+	FontKerning              string `default:".None"` // CSS
+	FontLanguageOverride     string `default:".None"` // CSS
+	FontSize                 string `default:".None"` // CSS
+	FontSizeAdjust           string `default:".None"` // CSS
+	FontStretch              string `default:".None"` // CSS
+	FontStyle                string `default:".None"` // CSS
+	FontSynthesis            string `default:".None"` // CSS
+	FontVariant              string `default:".None"` // CSS
+	FontVariantCaps          string `default:".None"` // CSS
+	FontVariantEastAsian     string `default:".None"` // CSS
+	FontVariantLigatures     string `default:".None"` // CSS
+	FontVariantNumeric       string `default:".None"` // CSS
+	FontVariantPosition      string `default:".None"` // CSS
+	FontWeight               string `default:".None"` // CSS
+	Gap                      string `default:".None"` // CSS
+	Grid                     string `default:".None"` // CSS
+	GridArea                 string `default:".None"` // CSS
+	GridAutoColumns          string `default:".None"` // CSS
+	GridAutoFlow             string `default:".None"` // CSS
+	GridAutoRows             string `default:".None"` // CSS
+	GridColumn               string `default:".None"` // CSS
+	GridColumnEnd            string `default:".None"` // CSS
+	GridColumnGap            string `default:".None"` // CSS
+	GridColumnStart          string `default:".None"` // CSS
+	GridGap                  string `default:".None"` // CSS
+	GridRow                  string `default:".None"` // CSS
+	GridRowEnd               string `default:".None"` // CSS
+	GridRowGap               string `default:".None"` // CSS
+	GridRowStart             string `default:".None"` // CSS
+	GridTemplate             string `default:".None"` // CSS
+	GridTemplateAreas        string `default:".None"` // CSS
+	GridTemplateColumns      string `default:".None"` // CSS
+	GridTemplateRows         string `default:".None"` // CSS
+	HangingPunctuation       string `default:".None"` // CSS
+	Height                   string `default:".None"` // CSS
+	Hyphens                  string `default:".None"` // CSS
+	ImageOrientation         string `default:".None"` // CSS
+	ImageRendering           string `default:".None"` // CSS
+	InlineSize               string `default:".None"` // CSS
+	Inset                    string `default:".None"` // CSS
+	InsetBlock               string `default:".None"` // CSS
+	InsetBlockEnd            string `default:".None"` // CSS
+	InsetBlockStart          string `default:".None"` // CSS
+	InsetInline              string `default:".None"` // CSS
+	InsetInlineEnd           string `default:".None"` // CSS
+	InsetInlineStart         string `default:".None"` // CSS
+	Isolation                string `default:".None"` // CSS
+	JustifyContent           string `default:".None"` // CSS
+	Left                     string `default:".None"` // CSS
+	LetterSpacing            string `default:".None"` // CSS
+	LineBreak                string `default:".None"` // CSS
+	LineHeight               string `default:".None"` // CSS
+	ListStyle                string `default:".None"` // CSS
+	ListStyleImage           string `default:".None"` // CSS
+	ListStylePosition        string `default:".None"` // CSS
+	ListStyleType            string `default:".None"` // CSS
+	Margin                   string `default:".None"` // CSS
+	MarginBlock              string `default:".None"` // CSS
+	MarginBlockEnd           string `default:".None"` // CSS
+	MarginBlockStart         string `default:".None"` // CSS
+	MarginBottom             string `default:".None"` // CSS
+	MarginInline             string `default:".None"` // CSS
+	MarginInlineEnd          string `default:".None"` // CSS
+	MarginInlineStart        string `default:".None"` // CSS
+	MarginLeft               string `default:".None"` // CSS
+	MarginRight              string `default:".None"` // CSS
+	MarginTop                string `default:".None"` // CSS
+	Mask                     string `default:".None"` // CSS
+	MaskBorder               string `default:".None"` // CSS
+	MaskBorderMode           string `default:".None"` // CSS
+	MaskBorderOutset         string `default:".None"` // CSS
+	MaskBorderRepeat         string `default:".None"` // CSS
+	MaskBorderSlice          string `default:".None"` // CSS
+	MaskBorderSource         string `default:".None"` // CSS
+	MaskBorderWidth          string `default:".None"` // CSS
+	MaskClip                 string `default:".None"` // CSS
+	MaskComposite            string `default:".None"` // CSS
+	MaskImage                string `default:".None"` // CSS
+	MaskMode                 string `default:".None"` // CSS
+	MaskOrigin               string `default:".None"` // CSS
+	MaskPosition             string `default:".None"` // CSS
+	MaskRepeat               string `default:".None"` // CSS
+	MaskSize                 string `default:".None"` // CSS
+	MaskType                 string `default:".None"` // CSS
+	MaxBlockSize             string `default:".None"` // CSS
+	MaxHeight                string `default:".None"` // CSS
+	MaxInlineSize            string `default:".None"` // CSS
+	MaxWidth                 string `default:".None"` // CSS
+	MinBlockSize             string `default:".None"` // CSS
+	MinHeight                string `default:".None"` // CSS
+	MinInlineSize            string `default:".None"` // CSS
+	MinWidth                 string `default:".None"` // CSS
+	MixBlendMode             string `default:".None"` // CSS
+	ObjectFit                string `default:".None"` // CSS
+	ObjectPosition           string `default:".None"` // CSS
+	Offset                   string `default:".None"` // CSS
+	OffsetAnchor             string `default:".None"` // CSS
+	OffsetBlock              string `default:".None"` // CSS
+	OffsetBlockEnd           string `default:".None"` // CSS
+	OffsetBlockStart         string `default:".None"` // CSS
+	OffsetInline             string `default:".None"` // CSS
+	OffsetInlineEnd          string `default:".None"` // CSS
+	OffsetInlineStart        string `default:".None"` // CSS
+	OffsetDistance           string `default:".None"` // CSS
+	OffsetPath               string `default:".None"` // CSS
+	OffsetRotate             string `default:".None"` // CSS
+	Opacity                  string `default:".None"` // CSS
+	Order                    string `default:".None"` // CSS
+	Orphans                  string `default:".None"` // CSS
+	Outline                  string `default:".None"` // CSS
+	OutlineColor             string `default:".None"` // CSS
+	OutlineOffset            string `default:".None"` // CSS
+	OutlineStyle             string `default:".None"` // CSS
+	OutlineWidth             string `default:".None"` // CSS
+	Overflow                 string `default:".None"` // CSS
+	OverflowAnchor           string `default:".None"` // CSS
+	OverflowBlock            string `default:".None"` // CSS
+	OverflowInline           string `default:".None"` // CSS
+	OverflowWrap             string `default:".None"` // CSS
+	OverflowX                string `default:".None"` // CSS
+	OverflowY                string `default:".None"` // CSS
+	OverscrollBehavior       string `default:".None"` // CSS
+	OverscrollBehaviorBlock  string `default:".None"` // CSS
+	OverscrollBehaviorInline string `default:".None"` // CSS
+	OverscrollBehaviorX      string `default:".None"` // CSS
+	OverscrollBehaviorY      string `default:".None"` // CSS
+	Padding                  string `default:".None"` // CSS
+	PaddingBlock             string `default:".None"` // CSS
+	PaddingBlockEnd          string `default:".None"` // CSS
+	PaddingBlockStart        string `default:".None"` // CSS
+	PaddingBottom            string `default:".None"` // CSS
+	PaddingInline            string `default:".None"` // CSS
+	PaddingInlineEnd         string `default:".None"` // CSS
+	PaddingInlineStart       string `default:".None"` // CSS
+	PaddingLeft              string `default:".None"` // CSS
+	PaddingRight             string `default:".None"` // CSS
+	PaddingTop               string `default:".None"` // CSS
+	PageBreakAfter           string `default:".None"` // CSS
+	PageBreakBefore          string `default:".None"` // CSS
+	PageBreakInside          string `default:".None"` // CSS
+	PaintOrder               string `default:".None"` // CSS
+	Perspective              string `default:".None"` // CSS
+	PerspectiveOrigin        string `default:".None"` // CSS
+	PlaceContent             string `default:".None"` // CSS
+	PlaceItems               string `default:".None"` // CSS
+	PlaceSelf                string `default:".None"` // CSS
+	PointerEvents            string `default:".None"` // CSS
+	Position                 string `default:".None"` // CSS
+	Quotes                   string `default:".None"` // CSS
+	Resize                   string `default:".None"` // CSS
+	Right                    string `default:".None"` // CSS
+	Rotate                   string `default:".None"` // CSS
+	RowGap                   string `default:".None"` // CSS
+	RubyAlign                string `default:".None"` // CSS
+	RubyMerge                string `default:".None"` // CSS
+	RubyPosition             string `default:".None"` // CSS
+	Scale                    string `default:".None"` // CSS
+	ScrollBehavior           string `default:".None"` // CSS
+	ScrollMargin             string `default:".None"` // CSS
+	ScrollMarginBlock        string `default:".None"` // CSS
+	ScrollMarginBlockEnd     string `default:".None"` // CSS
+	ScrollMarginBlockStart   string `default:".None"` // CSS
+	ScrollMarginBottom       string `default:".None"` // CSS
+	ScrollMarginInline       string `default:".None"` // CSS
+	ScrollMarginInlineEnd    string `default:".None"` // CSS
+	ScrollMarginInlineStart  string `default:".None"` // CSS
+	ScrollMarginLeft         string `default:".None"` // CSS
+	ScrollMarginRight        string `default:".None"` // CSS
+	ScrollMarginTop          string `default:".None"` // CSS
+	ScrollPadding            string `default:".None"` // CSS
+	ScrollPaddingBlock       string `default:".None"` // CSS
+	ScrollPaddingBlockEnd    string `default:".None"` // CSS
+	ScrollPaddingBlockStart  string `default:".None"` // CSS
+	ScrollPaddingBottom      string `default:".None"` // CSS
+	ScrollPaddingInline      string `default:".None"` // CSS
+	ScrollPaddingInlineEnd   string `default:".None"` // CSS
+	ScrollPaddingInlineStart string `default:".None"` // CSS
+	ScrollPaddingLeft        string `default:".None"` // CSS
+	ScrollPaddingRight       string `default:".None"` // CSS
+	ScrollPaddingTop         string `default:".None"` // CSS
+	ScrollSnapAlign          string `default:".None"` // CSS
+	ScrollSnapStop           string `default:".None"` // CSS
+	ScrollSnapType           string `default:".None"` // CSS
+	ShapeImageThreshold      string `default:".None"` // CSS
+	ShapeMargin              string `default:".None"` // CSS
+	ShapeOutside             string `default:".None"` // CSS
+	TabSize                  string `default:".None"` // CSS
+	TableLayout              string `default:".None"` // CSS
+	TextAlign                string `default:".None"` // CSS
+	TextAlignLast            string `default:".None"` // CSS
+	TextCombineUpright       string `default:".None"` // CSS
+	TextDecoration           string `default:".None"` // CSS
+	TextDecorationColor      string `default:".None"` // CSS
+	TextDecorationLine       string `default:".None"` // CSS
+	TextDecorationSkip       string `default:".None"` // CSS
+	TextDecorationSkipInk    string `default:".None"` // CSS
+	TextDecorationStyle      string `default:".None"` // CSS
+	TextDecorationThickness  string `default:".None"` // CSS
+	TextEmphasis             string `default:".None"` // CSS
+	TextEmphasisColor        string `default:".None"` // CSS
+	TextEmphasisPosition     string `default:".None"` // CSS
+	TextEmphasisStyle        string `default:".None"` // CSS
+	TextIndent               string `default:".None"` // CSS
+	TextJustify              string `default:".None"` // CSS
+	TextOrientation          string `default:".None"` // CSS
+	TextOverflow             string `default:".None"` // CSS
+	TextRendering            string `default:".None"` // CSS
+	TextShadow               string `default:".None"` // CSS
+	TextSizeAdjust           string `default:".None"` // CSS
+	TextTransform            string `default:".None"` // CSS
+	TextUnderlinePosition    string `default:".None"` // CSS
+	Top                      string `default:".None"` // CSS
+	TouchAction              string `default:".None"` // CSS
+	Transform                string `default:".None"` // CSS
+	TransformBox             string `default:".None"` // CSS
+	TransformOrigin          string `default:".None"` // CSS
+	TransformStyle           string `default:".None"` // CSS
+	Transition               string `default:".None"` // CSS
+	TransitionDelay          string `default:".None"` // CSS
+	TransitionDuration       string `default:".None"` // CSS
+	TransitionProperty       string `default:".None"` // CSS
+	TransitionTiming         string `default:".None"` // CSS
+	Translate                string `default:".None"` // CSS
+	UnicodeBidi              string `default:".None"` // CSS
+	UserSelect               string `default:".None"` // CSS
+	VerticalAlign            string `default:".None"` // CSS
+	Visibility               string `default:".None"` // CSS
+	WhiteSpace               string `default:".None"` // CSS
+	Width                    string `default:".None"` // CSS
+	WillChange               string `default:".None"` // CSS
+	WordBreak                string `default:".None"` // CSS
+	WordSpacing              string `default:".None"` // CSS
+	WordWrap                 string `default:".None"` // CSS
+	WritingMode              string `default:".None"` // CSS
+	ZIndex                   string `default:".None"` // CSS
 }
 
+// Convert the sheet to map ignoring a .None and ""
 func ConvertSheetToSlice(sheet CSStylesheet) map[string]string {
 	cssType := reflect.TypeOf(sheet)
 	cssValue := reflect.ValueOf(sheet)

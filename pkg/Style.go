@@ -1,48 +1,50 @@
 package pkg
 
 import (
+	"fmt"
 	"syscall/js"
 )
 
-// some colors
-var (
-	RED   = NewRGB(255, 0, 0)
-	BLUE  = NewRGB(0, 0, 255)
-	GREEN = NewRGB(0, 255, 0)
-)
-
-type RGBColor struct {
-	R uint8
-	G uint8
-	B uint8
-	A float32
+// Create a rgb color (GENERATE A COLOR)
+//
+//	//Example:
+//	myColor := CSSColor(255,0,0) // rgb(255,0,0)
+func CSSColor(r, g, b int8) string {
+	return fmt.Sprintf("rgb(%d,%d,%d)", r, g, b)
 }
 
-func NewRGB(r, g, b uint8) RGBColor {
-	return RGBColor{
-		R: r,
-		G: g,
-		B: b,
-		A: 1.0,
-	}
-}
-func NewRGA(r, g, b uint8, a float32) RGBColor {
-	return RGBColor{
-		R: r,
-		G: g,
-		B: b,
-		A: a,
-	}
+// Create a rgba color (GENERATE A COLOR)
+//
+//	//Example:
+//	myColor := CSSColorWithAlpha(255,0,0,0.5) // rgba(255,0,0,0.5)
+func CSSColorWithAlpha(r, g, b int8, a float32) string {
+	return fmt.Sprintf("rgba(%d,%d,%d,%f)", r, g, b, a)
 }
 
+// Represents a Style.
+// Represents a struct that can change the style of an element with various things
 type CSStyle struct {
 	ele   ObjectDOM
 	style js.Value
 }
 
+// Inject css a DOM element
+//
+//	//Example:
+//	myObjectDOM.NewStyle().Inject("color","blue")
 func (style *CSStyle) Inject(key, value string) {
 	style.style.Set(key, value)
 }
+
+//Injects CSS but with a structure. It can be useful for injecting various styles and for code autocompletion.
+//	//Example:
+/*	style1 := myObjectDOM.NewStyle()
+	style1.FromStylesSheet(CSStylesheet{
+		Color:           "red",
+		BackgroundColor: "blue",
+		TextAlign:       "center",
+	})
+*/
 func (style *CSStyle) FromStylesSheet(sheet CSStylesheet) {
 	sh := ConvertSheetToSlice(sheet)
 	for key, value := range sh {
@@ -51,6 +53,7 @@ func (style *CSStyle) FromStylesSheet(sheet CSStylesheet) {
 	}
 }
 
+// Create a new *CSStyle
 func NewStyle(ele ObjectDOM) *CSStyle {
 	return &CSStyle{
 		ele:   ele,
